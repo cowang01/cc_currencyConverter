@@ -9,15 +9,20 @@
   <script type="text/javascript" src="./js/bundle.js"></script>
 </head>
 <body>
-  <h2>Currency Converter</h2>
+  <h2><u>Currency Converter</u></h2>
   <div id="app">
-    <p>{{ test }}</p>
-    <select class="convertTo" name="">
-      <option v-for="(key, currency) in rawCurrency.rates">{{ currency }}</option>
-    </select>
-    <input v-model="money" type="number" name="money">
-    <p>{{ rawCurrency }}</p>
+    <p>How much money you got?</p>
+    <p>€<input v-model.number="money" type="number" name="money"></p>
+    <p>Convert to: <select v-model.number="currencyValue" class="convertTo" name="">
+      <option v-for="(key, currency) in rawCurrency.rates" :value="key">{{ currency }}</option>
+    </select></p>
+    <br>
+    <p>Exchange value: </p>
+    <h3>{{newCurrency}}</h3>
   </div>
 
 </body>
 </html>
+
+
+<!--  -->

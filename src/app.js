@@ -6,21 +6,26 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       test: "Testing",
       rawCurrency: {},
-      currencies: [],
+      currencyValue: 0,
       money: 0
     },
     mounted(){
       this.currencyRaw();
-      this.getCurrencies();
+      // this.getCurrencies();
+    },
+    computed: {
+      newCurrency: function(){
+        return (this.money * this.currencyValue);
+      }
     },
     methods: {
       currencyRaw: function() {const stream = fetch ("https://api.exchangeratesapi.io/latest")
       .then(response => response.json())
       .then(data => this.rawCurrency = data)
-    },
-    getCurrencies: function() {
-      this.currencies = this.rawCurrency.map(currency => currency.rates)
-    }
+    }//,
+    // getCurrencies: function() {
+    //   this.currencies = this.rawCurrency.map(currency => currency.rates)
   }
 })
 })
+// (this.money * this.currencies);
