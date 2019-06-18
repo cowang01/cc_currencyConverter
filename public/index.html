@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Currency Converter</title>
+  <script type="text/javascript" src="./js/bundle.js"></script>
+</head>
+<body>
+  <h2>Currency Converter</h2>
+  <div id="app">
+    <p>{{ test }}</p>
+    <select class="convertTo" name="">
+      <option v-for="(key, currency) in rawCurrency.rates">{{ currency }}</option>
+    </select>
+    <input v-model="money" type="number" name="money">
+    <p>{{ rawCurrency }}</p>
+  </div>
+
+</body>
+</html>
