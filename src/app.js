@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     computed: {
       newCurrency: function(){
-        return (this.money * this.currencyValue);
+        return (this.money * this.currencyValue).toFixed(2);
+        // return value.toFixed(2);
       }
     },
     methods: {
